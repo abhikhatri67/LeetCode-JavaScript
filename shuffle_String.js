@@ -18,12 +18,14 @@ Explanation: As shown, "codeleet" becomes "leetcode" after shuffling.
  * @return {string}
  */
 var restoreString = function (s, indices) {
-  let str = "";
-  for (let index = 0; index < indices.length; index++) {
-    str += s[indices[index]];
+  var len = indices.length;
+  var str = new Array(len);
+
+  for (let index = 0; index < len; index++) {
+    str[indices[index]] = s[index];
   }
 
-  return str;
+  return str.join("");
 };
 
 const s = "codeleet",
